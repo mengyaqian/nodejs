@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>index</title>
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">首页</a></li>
+                    <li><a href="/product">列表页</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <table border="1" width="80%" class="table"> 
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%pdts.forEach(function(pdt,index){%>
+            <tr>
+                <td>
+                    <%=index+1%>
+                </td>
+                <td>
+                    <%=pdt.name%>
+                </td>
+                <td>
+                    <%=pdt.price%>
+                </td>
+                <td>
+                    <%=pdt.num%>
+                </td>
+                <td>
+                    <%=pdt.remark%>
+                </td>
+            </tr>
+            <%});%>
+        </tbody>
+    </table>
+
+  </div>
+  <hr>
+
+  <script src="/javascripts/jquery-1.12.4.min.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

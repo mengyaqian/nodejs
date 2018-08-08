@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>list</title>
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+<style>
+    .input-group{
+        margin-bottom:10px;
+        width:100%;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">首页</a></li>
+                    <li class="active"><a href="/product">列表页</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <!-- <button type="button" class="btn btn-primary" onclick="addProduct()">添加一条</button>-->
+
+    <button type="button" id="add-btn" class="btn btn-primary btn-sm" data-toggle="modal" >添加一条</button>
+          
+    <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">汽车信息</h4>
+            </div>
+            <div class="modal-body">
+			    <input type="hidden" value="-1" id="carId">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="名称" id="name" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="价格" id="price" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="库存" id="num" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="备注" id="remark" aria-describedby="basic-addon1">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" id="save" class="btn btn-primary">保存</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <table border="1" width="80%" class="table">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>价格</th>
+                <th>库存</th>
+                <th>备注</th>
+				<th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="js_product">
+
+        </tbody>
+    </table>
+
+    
+  
+</body>
+
+<script src="/javascripts/jquery-1.12.4.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script src="/http.js"></script>
+<script src="/javascripts/web_product.js"></script>
+
+</html>
